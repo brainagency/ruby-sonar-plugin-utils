@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 
 require 'optparse'
+require 'yaml'
 
 class Options < Struct.new(:in_file, :out_file)
 end
@@ -27,7 +28,7 @@ module CLI
       end
 
       opt_parser.parse!(options)
-      return args     
+      return args
     end
   end
 end
@@ -39,3 +40,7 @@ cli_options = begin
                 puts "Please, run `./rubocop_rules_to_profile.rb --help` first to see all available options."
                 exit
               end
+
+rubocop_rules_file = YAML.load_file(cli_options.in_file)
+
+
