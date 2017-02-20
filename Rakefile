@@ -3,7 +3,6 @@ task default: %w[test]
 
 desc "Runs tests"
 task :test do
-  files = FileList['test/**/*_test.rb']
-  files_paths_joined = files.join(" ")
-  ruby "-Itest #{files_paths_joined}"
+  $LOAD_PATH << 'test'
+  Dir.glob('./test/**/*_test.rb').each { |file| require file}
 end
