@@ -1,0 +1,101 @@
+# These are all the cops that are enabled in the default configuration.
+
+Style/AccessModifierIndentation:
+  Description: Check indentation of private/protected visibility modifiers.
+  StyleGuide: '#indent-public-private-protected'
+  Enabled: true
+
+Style/AccessorMethodName:
+  Description: Check the naming of accessor methods for get_/set_.
+  StyleGuide: '#accessor_mutator_method_names'
+  Enabled: true
+
+#################### Metrics ###############################
+
+Metrics/AbcSize:
+  Description: >-
+                 A calculated magnitude based on number of assignments,
+                 branches, and conditions.
+  Reference: 'http://c2.com/cgi/wiki?AbcMetric'
+  Enabled: true
+
+Metrics/BlockNesting:
+  Description: 'Avoid excessive block nesting'
+  StyleGuide: '#three-is-the-number-thou-shalt-count'
+  Enabled: true
+
+#################### Lint ##################################
+### Warnings
+
+Lint/AmbiguousOperator:
+  Description: >-
+                 Checks for ambiguous operators in the first argument of a
+                 method invocation without parentheses.
+  StyleGuide: '#method-invocation-parens'
+  Enabled: true
+
+Lint/AmbiguousRegexpLiteral:
+  Description: >-
+                 Checks for ambiguous regexp literals in the first argument of
+                 a method invocation without parentheses.
+  Enabled: true
+
+#################### Performance ###########################
+
+Performance/Casecmp:
+  Description: >-
+             Use `casecmp` rather than `downcase ==`, `upcase ==`, `== downcase`, or `== upcase`..
+  Reference: 'https://github.com/JuanitoFatas/fast-ruby#stringcasecmp-vs-stringdowncase---code'
+  Enabled: true
+
+Performance/CaseWhenSplat:
+  Description: >-
+                  Place `when` conditions that use splat at the end
+                  of the list of `when` branches.
+  Enabled: true
+
+#################### Rails #################################
+
+Rails/ActionFilter:
+  Description: 'Enforces consistent use of action filter methods.'
+  Enabled: true
+
+Rails/Date:
+  Description: >-
+                  Checks the correct usage of date aware methods,
+                  such as Date.today, Date.current etc.
+  Enabled: true
+
+#################### Security ##############################
+
+Security/Eval:
+  Description: 'The use of eval represents a serious security risk.'
+  Enabled: true
+
+Security/JSONLoad:
+  Description: >-
+                 Prefer usage of `JSON.parse` over `JSON.load` due to potential
+                 security issues. See reference for more information.
+  Reference: 'http://ruby-doc.org/stdlib-2.3.0/libdoc/json/rdoc/JSON.html#method-i-load'
+  Enabled: true
+  # Autocorrect here will change to a method that may cause crashes depending
+  # on the value of the argument.
+  AutoCorrect: false
+
+#################### Bundler ###############################
+
+Bundler/DuplicatedGem:
+  Description: 'Checks for duplicate gem entries in Gemfile.'
+  Enabled: true
+  Include:
+    - '**/Gemfile'
+    - '**/gems.rb'
+
+Bundler/OrderedGems:
+  Description: >-
+                 Sort alphabetically gems appearing within a contiguous set
+                 of lines in the Gemfile
+  Enabled: true
+  Include:
+    - '**/Gemfile'
+    - '**/gems.rb'

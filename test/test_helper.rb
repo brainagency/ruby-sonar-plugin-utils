@@ -9,3 +9,13 @@ Minitest::Reporters.use!([
 ])
 
 Dir[File.dirname(__FILE__) + '/../core/**/*.rb'].each {|file| require file }
+
+class TestHelper
+  def self.rubocop_example_file_path
+    File.expand_path(File.dirname(__FILE__) + '/resources/rubocop_small_example.yaml')
+  end
+
+  def self.profile_output_file_path
+    File.expand_path(File.dirname(__FILE__) + '/../tmp/sonar_qube_profile_test_output.xml')
+  end
+end
