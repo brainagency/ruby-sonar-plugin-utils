@@ -3,6 +3,8 @@ GEM
   specs:
     ansi (1.5.0)
     builder (3.2.3)
+    coderay (1.1.1)
+    method_source (0.8.2)
     minitest (5.10.1)
     minitest-matchers (1.4.1)
       minitest (~> 5.0)
@@ -11,8 +13,15 @@ GEM
       builder
       minitest (>= 5.0)
       ruby-progressbar
+    pry (0.10.4)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
+    pry-nav (0.2.4)
+      pry (>= 0.9.10, < 0.11.0)
     rake (12.0.0)
     ruby-progressbar (1.8.1)
+    slop (3.6.0)
 
 PLATFORMS
   ruby
@@ -20,6 +29,7 @@ PLATFORMS
 DEPENDENCIES
   minitest-matchers (= 1.4.1)
   minitest-reporters (= 1.1.14)
+  pry-nav
   rake (= 12.0.0)
 
 BUNDLED WITH

@@ -33,6 +33,9 @@ module CLI
   end
 end
 
+require 'pry-nav'
+binding.pry
+
 cli_options = begin
                 CLI::Parser.parse ARGV
               rescue OptionParser::InvalidArgument => e
