@@ -7,13 +7,13 @@ module SonarQubeProfile
       DEFAULT_REPO_KEY = 'rubocop'
 
       KEY_PREFIX_MAPPING_TO_PRIORITY = {
-        /^Style/ => RulePriorities::MINOR,
-        /^Metrics/ => RulePriorities::INFO,
-        /^Lint/ => RulePriorities::MINOR,
-        /^Bundler/ => RulePriorities::INFO,
+        /^Style/       => RulePriorities::MINOR,
+        /^Metrics/     => RulePriorities::INFO,
+        /^Lint/        => RulePriorities::MINOR,
+        /^Bundler/     => RulePriorities::INFO,
         /^Performance/ => RulePriorities::MINOR,
-        /^Rails/ => RulePriorities::MINOR,
-        /^Security/ => RulePriorities::CRITICAL
+        /^Rails/       => RulePriorities::MINOR,
+        /^Security/    => RulePriorities::CRITICAL
       }
 
       attr_reader :rubocop_rule
