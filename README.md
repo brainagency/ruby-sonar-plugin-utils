@@ -3,7 +3,17 @@
 Contains a bunch of utility scripts to perform some file conversions and other preparation stuffs
 for original plugin.
 
-## Convert rubocop rules into SonarQube profile rules
+## Requirements
+
+All scripts are pure Ruby scripts, so to be able to run provided scripts on your local machine you need:
+
+1. Have installed Ruby. The `rvm` is a good choice to do it!
+2. Install `bundler` gem by `gem install bundler`
+3. Install dependencies by running `bundle install`
+
+## Utility scripts
+
+### Convert rubocop rules into SonarQube profile rules
 
 __Command specification:__
 
@@ -46,4 +56,14 @@ KEY_PREFIX_MAPPING_TO_PRIORITY = {
   /^Rails/       => RulePriorities::MINOR,
   /^Security/    => RulePriorities::CRITICAL
 }
+```
+
+## Developing
+
+### Testing
+
+All scripts are fully tested by unit tests. For running tests, please, use the following command:
+
+```shell
+$ bundle exec rake
 ```
