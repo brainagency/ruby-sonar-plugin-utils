@@ -1,20 +1,11 @@
 require_relative '../rule'
 require_relative '../../sonar_qube/rule_priorities'
+require_relative '../../sonar_qube/converters/rubocop_rule_key_to_priority'
 
 module SonarQubeProfile
   module Rules
     class FromRubocopRuleConverter
       DEFAULT_REPO_KEY = 'rubocop'
-
-      KEY_PREFIX_MAPPING_TO_PRIORITY = {
-        /^Style/       => SonarQube::RulePriorities::MINOR,
-        /^Metrics/     => SonarQube::RulePriorities::INFO,
-        /^Lint/        => SonarQube::RulePriorities::MINOR,
-        /^Bundler/     => SonarQube::RulePriorities::INFO,
-        /^Performance/ => SonarQube::RulePriorities::MINOR,
-        /^Rails/       => SonarQube::RulePriorities::MINOR,
-        /^Security/    => SonarQube::RulePriorities::CRITICAL
-      }
 
       attr_reader :rubocop_rule
 
@@ -37,11 +28,7 @@ module SonarQubeProfile
       end
 
       def decide_about_priority_based_on_key
-        key = fetch_rubocop_rule_key
-        KEY_PREFIX_MAPPING_TO_PRIORITY.each do |key_regex, priority|
-          return priority if key_regex.match(key)
-        end
-        SonarQube::RulePriorities::MINOR
+        SonarQube::Converters::RubocopRuleKeyToPriority.new(fetch_rubocop_rule_key).call
       end
     end
   end
