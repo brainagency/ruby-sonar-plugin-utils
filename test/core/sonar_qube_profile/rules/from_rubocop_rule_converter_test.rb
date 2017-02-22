@@ -20,7 +20,7 @@ describe SonarQubeProfile::Rules::FromRubocopRuleConverter do
       let(:rubocop_rule_key) { 'Style/Abc' }
 
       it 'sets priority to Minor' do
-        assert_equal profile_rule.priority, SonarQubeProfile::RulePriorities::MINOR
+        assert_equal profile_rule.priority, SonarQube::RulePriorities::MINOR
       end
     end
 
@@ -28,7 +28,7 @@ describe SonarQubeProfile::Rules::FromRubocopRuleConverter do
       let(:rubocop_rule_key) { 'Metrics/Abc' }
 
       it 'sets priority to Info' do
-        assert_equal profile_rule.priority, SonarQubeProfile::RulePriorities::INFO
+        assert_equal profile_rule.priority, SonarQube::RulePriorities::INFO
       end
     end
 
@@ -36,7 +36,7 @@ describe SonarQubeProfile::Rules::FromRubocopRuleConverter do
       let(:rubocop_rule_key) { 'Lint/Abc' }
 
       it 'sets priority to Minor' do
-        assert_equal profile_rule.priority, SonarQubeProfile::RulePriorities::MINOR
+        assert_equal profile_rule.priority, SonarQube::RulePriorities::MINOR
       end
     end
 
@@ -44,7 +44,7 @@ describe SonarQubeProfile::Rules::FromRubocopRuleConverter do
       let(:rubocop_rule_key) { 'Bundler/Abc' }
 
       it 'sets priority to Info' do
-        assert_equal profile_rule.priority, SonarQubeProfile::RulePriorities::INFO
+        assert_equal profile_rule.priority, SonarQube::RulePriorities::INFO
       end
     end
 
@@ -52,7 +52,7 @@ describe SonarQubeProfile::Rules::FromRubocopRuleConverter do
       let(:rubocop_rule_key) { 'Performance/Abc' }
 
       it 'sets priority to Minor' do
-        assert_equal profile_rule.priority, SonarQubeProfile::RulePriorities::MINOR
+        assert_equal profile_rule.priority, SonarQube::RulePriorities::MINOR
       end
     end
 
@@ -60,7 +60,7 @@ describe SonarQubeProfile::Rules::FromRubocopRuleConverter do
       let(:rubocop_rule_key) { 'Style/Abc' }
 
       it 'sets priority to Minor' do
-        assert_equal profile_rule.priority, SonarQubeProfile::RulePriorities::MINOR
+        assert_equal profile_rule.priority, SonarQube::RulePriorities::MINOR
       end
     end
     
@@ -68,7 +68,7 @@ describe SonarQubeProfile::Rules::FromRubocopRuleConverter do
       let(:rubocop_rule_key) { 'Security/Abc' }
 
       it 'sets priority to Critical' do
-        assert_equal profile_rule.priority, SonarQubeProfile::RulePriorities::CRITICAL
+        assert_equal profile_rule.priority, SonarQube::RulePriorities::CRITICAL
       end
     end
   end

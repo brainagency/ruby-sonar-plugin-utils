@@ -1,4 +1,4 @@
-module SonarQubeProfile
+module SonarQube
   module RulePriorities
     BLOCKER = 'BLOCKER'
     CRITICAL = 'CRITICAL'

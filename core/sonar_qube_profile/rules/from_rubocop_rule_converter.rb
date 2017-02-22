@@ -1,5 +1,5 @@
 require_relative '../rule'
-require_relative '../rule_priorities'
+require_relative '../../sonar_qube/rule_priorities'
 
 module SonarQubeProfile
   module Rules
@@ -7,13 +7,13 @@ module SonarQubeProfile
       DEFAULT_REPO_KEY = 'rubocop'
 
       KEY_PREFIX_MAPPING_TO_PRIORITY = {
-        /^Style/       => RulePriorities::MINOR,
-        /^Metrics/     => RulePriorities::INFO,
-        /^Lint/        => RulePriorities::MINOR,
-        /^Bundler/     => RulePriorities::INFO,
-        /^Performance/ => RulePriorities::MINOR,
-        /^Rails/       => RulePriorities::MINOR,
-        /^Security/    => RulePriorities::CRITICAL
+        /^Style/       => SonarQube::RulePriorities::MINOR,
+        /^Metrics/     => SonarQube::RulePriorities::INFO,
+        /^Lint/        => SonarQube::RulePriorities::MINOR,
+        /^Bundler/     => SonarQube::RulePriorities::INFO,
+        /^Performance/ => SonarQube::RulePriorities::MINOR,
+        /^Rails/       => SonarQube::RulePriorities::MINOR,
+        /^Security/    => SonarQube::RulePriorities::CRITICAL
       }
 
       attr_reader :rubocop_rule
@@ -41,7 +41,7 @@ module SonarQubeProfile
         KEY_PREFIX_MAPPING_TO_PRIORITY.each do |key_regex, priority|
           return priority if key_regex.match(key)
         end
-        RulePriorities::MINOR
+        SonarQube::RulePriorities::MINOR
       end
     end
   end

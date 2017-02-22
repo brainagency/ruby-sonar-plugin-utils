@@ -7,7 +7,7 @@ describe SonarQubeProfile::Rules::ToXml do
     SonarQubeProfile::Rule.new(
       repository_key: 'rubocop',
       key: 'Style/Abc',
-      priority: SonarQubeProfile::RulePriorities::MINOR
+      priority: SonarQube::RulePriorities::MINOR
     )
   end
 

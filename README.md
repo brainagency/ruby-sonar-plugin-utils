@@ -48,13 +48,13 @@ _Default severity level mapping depending on the Rubocop's rule key:_
 
 ```ruby
 KEY_PREFIX_MAPPING_TO_PRIORITY = {
-  /^Style/       => RulePriorities::MINOR,
-  /^Metrics/     => RulePriorities::INFO,
-  /^Lint/        => RulePriorities::MINOR,
-  /^Bundler/     => RulePriorities::INFO,
-  /^Performance/ => RulePriorities::MINOR,
-  /^Rails/       => RulePriorities::MINOR,
-  /^Security/    => RulePriorities::CRITICAL
+  /^Style/       => SonarQube::RulePriorities::MINOR,
+  /^Metrics/     => SonarQube::RulePriorities::INFO,
+  /^Lint/        => SonarQube::RulePriorities::MINOR,
+  /^Bundler/     => SonarQube::RulePriorities::INFO,
+  /^Performance/ => SonarQube::RulePriorities::MINOR,
+  /^Rails/       => SonarQube::RulePriorities::MINOR,
+  /^Security/    => SonarQube::RulePriorities::CRITICAL
 }
 ```
 
