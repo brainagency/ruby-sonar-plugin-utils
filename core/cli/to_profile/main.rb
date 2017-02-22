@@ -1,4 +1,4 @@
-require_relative 'parser'
+require_relative '../parser'
 require_relative '../../rubocop/parser'
 require_relative '../../sonar_qube_profile/rules/from_rubocop_rule_converter'
 require_relative '../../sonar_qube_profile/rules/to_xml'
@@ -22,7 +22,7 @@ module CLI
       private
 
       def parse_argv
-        CLI::ToProfile::Parser.parse(argv)
+        CLI::Parser.parse(argv)
       end
 
       def read_and_parse_rubocop_config_file(file_path)

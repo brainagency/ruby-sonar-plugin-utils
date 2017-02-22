@@ -1,7 +1,7 @@
 require 'test_helper'
 
-describe CLI::ToProfile::Parser do
-  subject { CLI::ToProfile::Parser.parse(argv) }
+describe CLI::Parser do
+  subject { CLI::Parser.parse(argv) }
 
   describe 'WHEN ARGV are valid' do
     let(:argv) do
@@ -9,7 +9,7 @@ describe CLI::ToProfile::Parser do
     end
 
     it 'parses properly without exception' do
-      assert_instance_of CLI::ToProfile::Options, subject
+      assert_instance_of CLI::Options, subject
       assert_equal subject.in_file_path, 'input_file_path'
       assert_equal subject.out_file_path, 'output_file_path'
     end
