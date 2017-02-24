@@ -25,6 +25,14 @@ describe SonarQubeRuleDefinition::Rules::ToXml do
       assert xml_rule.include?(rule.type)
       assert xml_rule.include?(rule.status)
     end
+
+    it 'properly makes a node for name property' do
+      assert xml_rule.include?("<![CDATA[Name rule]]>")
+    end
+
+    it 'properly makes a node for description property' do
+      assert xml_rule.include?("<![CDATA[Rule description]]>")
+    end
   end
 end
 

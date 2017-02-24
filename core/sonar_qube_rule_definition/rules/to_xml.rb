@@ -29,11 +29,11 @@ module SonarQubeRuleDefinition
       end
 
       def name_tag
-        "<name>#{rule.name}</name>"
+        "<name><![CDATA[#{rule.name}]]></name>"
       end
 
       def description_tag
-        "<description>#{rule.description}</description>"
+        "<description><![CDATA[#{rule.description}]]></description>"
       end
 
       def type_tag
