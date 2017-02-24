@@ -58,6 +58,42 @@ KEY_PREFIX_MAPPING_TO_PRIORITY = {
 }
 ```
 
+### Convert rubocop rules into SonarQube rule definitions
+
+__Command specification:__
+
+```shell
+$ ./rubocop_rules_to_sq_rule_definitions.rb -i <INPUT_FILE_PATH> -o <OUTPUT_FILE_PATH>
+```
+
+Converts an YAML file with Rubocop rules into XML file of SonarQube rule definitions.
+
+__Details__
+
+_Example of Rubocop rules file:_
+
+```yaml
+Style/AccessModifierIndentation:
+  Description: Check indentation of private/protected visibility modifiers.
+  StyleGuide: '#indent-public-private-protected'
+  Enabled: true
+```
+
+_Example of SQ rule definition part:_
+
+```xml
+<rules>
+  <rule>
+    <key>Style/AccessModifierIndentation</key>
+    <priority>MINOR</priority>
+    <name>Check indentation of private/protected visibility modifiers.</name>
+    <description>Check indentation of private/protected visibility modifiers.</description>
+    <type>CODE_SMELL</type>
+    <status>ready</status>   
+  </rule>
+</rules>
+```
+
 ## Developing
 
 ### Testing

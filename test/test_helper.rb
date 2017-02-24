@@ -18,4 +18,8 @@ class TestHelper
   def self.profile_output_file_path
     File.expand_path(File.dirname(__FILE__) + '/../tmp/sonar_qube_profile_test_output.xml')
   end
+
+  def self.rule_definition_output_file_path
+    File.expand_path(File.dirname(__FILE__) + '/../tmp/sonar_qube_rule_definition_test_output.xml')
+  end
 end
