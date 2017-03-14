@@ -33,7 +33,7 @@ describe SonarQubeRuleDefinition::Rules::FromRubocopRuleConverter do
     end
 
     it 'has proper status' do
-      assert_equal rule_definition.status, 'ready'
+      assert_equal rule_definition.status, 'READY'
     end
   end
 end

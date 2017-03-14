@@ -1,7 +1,8 @@
 module SonarQube
   module RuleStatuses
-    READY      = 'ready'.freeze
-    DEPRECATED = 'deprecated'.freeze
-    BETA       = 'beta'.freeze
+    READY      = 'READY'.freeze
+    DEPRECATED = 'DEPRECATED'.freeze
+    BETA       = 'BETA'.freeze
+    REMOVED    = 'REMOVED'.freeze
   end
 end
